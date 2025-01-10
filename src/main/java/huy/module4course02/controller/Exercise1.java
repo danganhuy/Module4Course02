@@ -20,7 +20,7 @@ public class Exercise1 {
 
     @GetMapping(value = "/")
     public String home() {
-        return "index";
+        return "exercise1/index";
     }
 
     @PostMapping(value = "/validate")
@@ -28,10 +28,10 @@ public class Exercise1 {
         boolean isValid = this.validate(email);
         if (!isValid) {
             modelMap.addAttribute("message", "Email is invalid");
-            return "index";
+            return "exercise1/index";
         }
         modelMap.addAttribute("email", email);
-        return "success";
+        return "exercise1/success";
     }
 
     private boolean validate(String regex) {
